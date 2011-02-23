@@ -1,0 +1,12 @@
+table {}
+
+table thead tr {
+  text-align: center;
+  background: #CCC;
+}
+table thead tr th {
+  font-weight: bold;
+}
+table td {
+  border-bottom: 1px solid #000;
+}

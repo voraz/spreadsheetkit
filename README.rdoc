@@ -1,0 +1,12 @@
+= Spreadsheetkit
+
+This project rocks and uses MIT-LICENSE.
+
+== Dependences 
+* spreadsheet ~> 0.6.5.2
+* css_parser ~> 1.1.5
+* nokogiri ~> 1.4.4
+
+== Inspiration
+
+[Stevo] https://github.com/stevo/excellent
