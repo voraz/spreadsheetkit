@@ -7,4 +7,5 @@ Create XLSs using HTML+CSS. The objective is the same of PDKKit, but for spreads
 * nokogiri ~> 1.4.4
 
 == Inspiration
+[PDFKit] https://github.com/jdpace/PDFKit
 [Stevo] https://github.com/stevo/excellent
