@@ -49,6 +49,9 @@ module Spreadsheetkit
       #p value 
       #@style.horizontal_align = value.to_sym
     end
+    def text_align(value)
+      @style.horizontal_align = value.to_sym
+    end
         
     def text_align(value)
       @style.horizontal_align = value.to_sym

@@ -15,22 +15,8 @@ module Spreadsheetkit
       @sheet = xls.create_worksheet
       @sheet.name = @title unless @title.blank?
       
-      @rows.each_with_index do |row, row_x|
-        @sheet.row(row_x).default_format = row.format.style
-        
-        row.cells.each do |cell|
-          cell_x = row.cell_x(cell)
-          
-          if cell.merge?
-            cell_x.upto(cell_x + cell.additional_columns) do |i| 
-              @sheet.row(row_x).set_format(i, cell.format.style)
-            end
-          else
-            @sheet.row(row_x).set_format(cell_x, cell.format.style)
-          end
-
-          @sheet[row_x, cell_x] = cell.content
-        end
+      @rows.each_with_index do |row, row_x| 
+        row.render @sheet.row(row_x)
       end
     end
     

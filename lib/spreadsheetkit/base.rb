@@ -5,6 +5,7 @@ module Spreadsheetkit
   autoload :Row, "spreadsheetkit/row"
   autoload :Sheet, "spreadsheetkit/sheet"
   autoload :StyleParser, "spreadsheetkit/style_parser"
+  autoload :Util, "spreadsheetkit/util"
   
   class Base
     include StyleParser

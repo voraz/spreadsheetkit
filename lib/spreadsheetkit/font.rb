@@ -24,10 +24,8 @@ module Spreadsheetkit
     private
     
     def font_size(value)
-      unless value.include?("%")
-        value = value.scan(/\d+/)[0]
-        @style.size = value.to_i unless value.blank?
-      end
+      size = Spreadsheetkit::Util.number_from_size(value)
+      @style.size = size unless size.blank?
     end
 
     def font_style(value)

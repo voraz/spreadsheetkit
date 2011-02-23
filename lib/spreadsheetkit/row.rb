@@ -1,7 +1,7 @@
 module Spreadsheetkit
   
   class Row
-    attr_reader :cells, :tr, :format, :merge
+    attr_reader :cells, :tr, :format, :merge, :row
     
     def initialize(tr)
       @tr = tr
@@ -15,6 +15,29 @@ module Spreadsheetkit
       end
     end
     
+    def merge?
+      merge
+    end
+    
+    def render(row)
+      @row = row
+      apply_style
+      
+      @cells.each do |cell|
+        cell_x = cell_x(cell)
+        
+        if merge?
+          cell_x.upto(cell_x + cell.additional_columns) do |i| 
+            row.set_format(i, cell.format.style)
+          end
+        else
+          row.set_format(cell_x, cell.format.style)
+        end
+        row[cell_x] = cell.content
+      end
+    end
+    
+    private
     def cell_x(cell)
       index = @cells.index(cell)
       
@@ -26,9 +49,19 @@ module Spreadsheetkit
       
       index
     end
+        
+    def apply_style
+      @row.default_format = @format.style
+      @format.inline_style.each do |attr, value|
+        case attr
+          when 'height' then height(value)
+        end
+      end
+    end
     
-    def merge?
-      merge
+    def height(value)
+      size = Spreadsheetkit::Util.number_from_size(value)
+      @row.height = size unless size.blank?
     end
   end
   

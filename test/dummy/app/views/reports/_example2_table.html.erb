@@ -1,20 +1,26 @@
 <%= stylesheet_link_tag 'reset', 'example2' %>
 
-<table border="1">
+<table>
   <thead>
     <tr>
       <th>Header 1</th>
       <th>Header 2</th>
+      <th class='total'>Total</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>row 1, cell 1</td>
-      <td>row 1, cell 2</td>
+      <td>100</td>
+      <td>200</td>
+      <td class='line_total'>300</td>
     </tr>
     <tr>
-      <td>row 2, cell 1</td>
-      <td>row 2, cell 2</td>
+      <td>50</td>
+      <td>60</td>
+      <td class='line_total'>110</td>
+    </tr>
+    <tr>
+      <td class='total' colspan='3'>Total: 410</td>
     </tr>
   </tbody>
 </table> 
