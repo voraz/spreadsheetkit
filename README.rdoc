@@ -1,6 +1,5 @@
 = Spreadsheetkit
-
-This project rocks and uses MIT-LICENSE.
+Create XLSs using HTML+CSS. The objective is the same of PDKKit, but for spreadsheets.
 
 == Dependences 
 * spreadsheet ~> 0.6.5.2
@@ -8,5 +7,4 @@ This project rocks and uses MIT-LICENSE.
 * nokogiri ~> 1.4.4
 
 == Inspiration
-
 [Stevo] https://github.com/stevo/excellent
